@@ -1,5 +1,7 @@
 /* Base */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -9,8 +11,13 @@ body {
   font-family: system-ui, Arial, sans-serif;
 }
 
-a { color: #2563eb; text-decoration: none; }
-hr { display: none; }
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+hr {
+  display: none;
+}
 
 /* Header */
 header {
@@ -24,7 +31,8 @@ header {
   font-size: 0; /* oculta los "|" sueltos entre enlaces */
 }
 
-header::before { /* cuadrado azul "FP", sin HTML extra */
+header::before {
+  /* cuadrado azul "FP", sin HTML extra */
   content: "FP";
   display: grid;
   place-items: center;
@@ -38,9 +46,20 @@ header::before { /* cuadrado azul "FP", sin HTML extra */
   font-weight: bold;
 }
 
-header a { padding: 8px 16px; border-radius: 8px; color: #94a3b8; font-size: 15px; }
-header a:hover { background: #1e293b; color: #fff; }
-header a:last-child { margin-left: auto; border: 1px solid #334155; } /* Irten a la derecha */
+header a {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 15px;
+}
+header a:hover {
+  background: #1e293b;
+  color: #fff;
+}
+header a:last-child {
+  margin-left: auto;
+  border: 1px solid #334155;
+} /* Irten a la derecha */
 
 /* Formularios */
 form {
@@ -52,7 +71,9 @@ form {
   border-radius: 14px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   margin-top: 6px;
   padding: 11px;
@@ -61,7 +82,11 @@ input, select, textarea {
   border-radius: 8px;
 }
 
-input:focus, select:focus, textarea:focus { outline: 2px solid #2563eb; }
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #2563eb;
+}
 
 button {
   padding: 11px 20px;
@@ -73,31 +98,100 @@ button {
   cursor: pointer;
 }
 
-button:hover { background: #1d4ed8; }
-#loginForm button { width: 100%; }
+button:hover {
+  background: #1d4ed8;
+}
+#loginForm button {
+  width: 100%;
+}
 
 /* Alta: "UTZI" y "GORDE" en una fila (font-size 0 oculta el "|" que hay entre ambos) */
-#formBaliabidea p:last-child { display: flex; align-items: center; gap: 16px; font-size: 0; }
-#formBaliabidea p:last-child a, #formBaliabidea button { font-size: 15px; }
-#formBaliabidea button { flex: 1; }
+#formBaliabidea p:last-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0;
+}
+#formBaliabidea p:last-child a,
+#formBaliabidea button {
+  font-size: 15px;
+}
+#formBaliabidea button {
+  flex: 1;
+}
 
 /* Buscador: sin tarjeta, input y botón en fila */
-#bilatuForm { display: flex; align-items: center; gap: 10px; max-width: none; margin: 0 0 20px; padding: 0; background: none; border: 0; }
-#bilatuForm input { flex: 1; margin: 0; }
+#bilatuForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: none;
+  margin: 0 0 20px;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+#bilatuForm input {
+  flex: 1;
+  margin: 0;
+}
 
 /* "+ Objektu Berria Sortu" (enlace directo del body) como botón */
-body > a { display: inline-block; padding: 10px 18px; background: #10b981; color: #fff; border-radius: 8px; }
+body > a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #10b981;
+  color: #fff;
+  border-radius: 8px;
+}
 
 /* Tabla */
-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; }
-th, td { padding: 12px 16px; text-align: left; border: 0; border-bottom: 1px solid #e2e8f0; }
-th { background: #f1f5f9; color: #64748b; font-size: 13px; text-transform: uppercase; }
-tbody tr:hover { background: #f8fafc; }
-td:nth-child(1) { font-weight: 600; } /* Izena */
-td:nth-child(5) { color: #64748b; }   /* Ezaugarriak */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+th {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+tbody tr:hover {
+  background: #f8fafc;
+}
+td:nth-child(1) {
+  font-weight: 600;
+} /* Izena */
+td:nth-child(5) {
+  color: #64748b;
+} /* Ezaugarriak */
 
 /* Errores: !important porque el HTML trae style="color: red" */
-#errorea, #mezuErrorea { padding: 10px; background: #fef2f2; color: #b91c1c !important; border-radius: 8px; text-align: center; }
-#errorea:empty, #mezuErrorea:empty { display: none; } /* oculto si no hay mensaje */
+#errorea,
+#mezuErrorea {
+  padding: 10px;
+  background: #fef2f2;
+  color: #b91c1c !important;
+  border-radius: 8px;
+  text-align: center;
+}
+#errorea:empty,
+#mezuErrorea:empty {
+  display: none;
+} /* oculto si no hay mensaje */
 
-@media (max-width: 700px) { table { display: block; overflow-x: auto; } }
+@media (max-width: 700px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

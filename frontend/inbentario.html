@@ -1,34 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="eu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inbentarioa</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/inbentario.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <a href="inbentario.html">Inbentarioa</a>
-        <a href="erabiltzaileak.html">Erabiltzaileak</a>
-        <a href="objektuakSortu.html">Objektu berria</a>
-        <a href="#" id="irten">Irten</a>
+      <a href="inbentario.html">Inbentarioa</a>
+      <a href="erabiltzaileak.html">Erabiltzaileak</a>
+      <a href="gelak.html">Gelak</a>
+      <a href="mugimenduak.html">Mugimenduak</a>
+      <a href="#" id="irten">Irten</a>
     </header>
     <h1>Inbentarioa</h1>
     <a href="objektuakSortu.html">+ Objektu Berria Sortu</a>
-    <br><br>
+    <br /><br />
     <p id="mezuErrorea" role="alert"></p>
     <form id="bilatuForm">
-        <input type="text" id="bilatu" placeholder="Bilatu..." aria-label="Bilatu">
-        <button type="submit">Iragazi</button>
-        <a href="#" id="garbitu">Garbitu</a>
+      <input
+        type="text"
+        id="bilatu"
+        placeholder="Bilatu..."
+        aria-label="Bilatu"
+      />
+      <button type="submit">Iragazi</button>
+      <a href="#" id="garbitu">Garbitu</a>
     </form>
     <table>
-        <thead><tr>
-            <th>Izena</th><th>Marka</th><th>Modeloa</th><th>Kategoria</th><th>Ezaugarriak</th><th>Ekintzak</th>
-        </tr></thead>
-        <tbody id="taulaGorputza"></tbody>
+      <thead>
+        <tr>
+          <th>Izena</th>
+          <th>Marka</th>
+          <th>Modeloa</th>
+          <th>Kategoria</th>
+          <th>Ezaugarriak</th>
+          <th>Ekintzak</th>
+        </tr>
+      </thead>
+      <tbody id="taulaGorputza"></tbody>
     </table>
     <script src="js/auth.js"></script>
-</body>
+  </body>
 </html>

@@ -29,10 +29,10 @@ try {
     $pdo = (new DB())->getKonexioa();
     if ($id) {
         $stmt = $pdo->prepare('UPDATE baliabideak SET izena=:izena, marka=:marka, modeloa=:modeloa, kategoriaId=:kategoriaId, deskribapena=:deskribapena WHERE id=:id');
-        $stmt->execute(['izena'=>$izena, 'marka'=>$marka, 'modeloa'=>$modeloa, 'kategoriaId'=>$kategoriaId, 'deskribapena'=>$deskribapena, 'id'=>$id]);
+        $stmt->execute(['izena' => $izena, 'marka' => $marka, 'modeloa' => $modeloa, 'kategoriaId' => $kategoriaId, 'deskribapena' => $deskribapena, 'id' => $id]);
     } else {
         $stmt = $pdo->prepare('INSERT INTO baliabideak (izena, marka, modeloa, kategoriaId, deskribapena) VALUES (:izena, :marka, :modeloa, :kategoriaId, :deskribapena)');
-        $stmt->execute(['izena'=>$izena, 'marka'=>$marka, 'modeloa'=>$modeloa, 'kategoriaId'=>$kategoriaId, 'deskribapena'=>$deskribapena]);
+        $stmt->execute(['izena' => $izena, 'marka' => $marka, 'modeloa' => $modeloa, 'kategoriaId' => $kategoriaId, 'deskribapena' => $deskribapena]);
     }
     echo json_encode(['success' => true]);
 } catch (Throwable $e) {
