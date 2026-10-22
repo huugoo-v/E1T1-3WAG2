@@ -1,4 +1,4 @@
-# E1T1-3WAG2 — frontend eta backend banatuta
+# E1T1-3WAG2
 
 ## Egituraren laburpena
 
