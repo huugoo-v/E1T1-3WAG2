@@ -1,0 +1,8 @@
+# Editoreak eta sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Ingurune lokaleko konfigurazioa
+.env

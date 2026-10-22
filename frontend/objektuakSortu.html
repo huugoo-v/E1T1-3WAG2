@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbentarioa - Alta</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/sortuBaliabide.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="inbentario.html">Inbentarioa</a>
+        <a href="erabiltzaileak.html">Erabiltzaileak</a>
+        <a href="#" id="irten">Irten</a>
+    </header>
+    <h2 id="izenburua">EKIPAMENDU BERRIA — ALTA EMAN</h2>
+    <p id="mezuErrorea" role="alert"></p>
+    <form id="formBaliabidea">
+        <input type="hidden" name="id" id="id">
+        <p><label for="izena">Ekipamenduaren Izena (*):</label><br>
+        <input type="text" name="izena" id="izena" placeholder="Ikasle NUC Ordenagailua" required></p>
+        <p><label for="marka">Marka:</label><br>
+        <input type="text" name="marka" id="marka" placeholder="Intel"></p>
+        <p><label for="modeloa">Modeloa:</label><br>
+        <input type="text" name="modeloa" id="modeloa" placeholder="NUC 11 Pro Kit"></p>
+        <p><label for="kategoria_id">Kategoria (*):</label><br>
+        <select name="kategoria_id" id="kategoria_id" required>
+            <option value="1">Mahaigaineko ekipoa</option>
+            <option value="2">Portatila</option>
+            <option value="3">Periferikoak</option>
+            <option value="4">Beste batzuk</option>
+        </select></p>
+        <p><label for="deskribapena">Deskribapena / Ezaugarriak:</label><br>
+        <textarea name="deskribapena" id="deskribapena" rows="3" placeholder="Intel Core i5, 16GB RAM..."></textarea></p>
+        <p><a href="inbentario.html">UTZI</a><button type="submit">GORDE</button></p>
+    </form>
+</body>
+</html>
