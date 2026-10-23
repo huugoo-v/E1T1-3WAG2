@@ -40,6 +40,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     mezuErrorea.textContent = "";
+    // Bezeroaren aldeko baliozkotzea (zerbitzariak berriz egiaztatzen du)
+    const erroreak = [];
+    const izena = form.izena.value.trim();
+    if (izena === "" || izena.length > 150)
+      erroreak.push("Izena derrigorrezkoa da (gehienez 150 karaktere).");
+    if (form.marka.value.trim().length > 100)
+      erroreak.push("Marka luzeegia da (gehienez 100 karaktere).");
+    if (form.modeloa.value.trim().length > 100)
+      erroreak.push("Modeloa luzeegia da (gehienez 100 karaktere).");
+    if (form.deskribapena.value.trim().length > 2000)
+      erroreak.push("Deskribapena luzeegia da (gehienez 2000 karaktere).");
+    if (!form.kategoria_id.value)
+      erroreak.push("Kategoria aukeratu behar da.");
+    if (erroreak.length) {
+      mezuErrorea.textContent = erroreak.join(" ");
+      return;
+    }
     try {
       const response = await fetch("../backend/api/sortuBaliabide.php", {
         method: "POST",

@@ -1,0 +1,9 @@
+# Orriak ez dira cachean gordetzen: saioa itxi ondoren "atzera" botoiak ez du orri babestua berriz erakutsiko
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>

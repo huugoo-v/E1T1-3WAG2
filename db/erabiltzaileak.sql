@@ -40,7 +40,7 @@ CREATE TABLE
     `id` int (11) NOT NULL,
     `username` varchar(50) NOT NULL,
     `pasahitza` varchar(255) NOT NULL,
-    `rol` varchar(30) NOT NULL DEFAULT 'teknikaria'
+    `rol` varchar(30) NOT NULL DEFAULT 'user'
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 --
@@ -53,13 +53,13 @@ VALUES
     5,
     'Danel',
     '$2y$10$123456789012345678901uzyIHo1qeQfuj8ky7h/8Ma04yZy78hfy',
-    'erabiltzailea'
+    'user'
   ),
   (
     6,
     'Anti',
     '$2y$10$123456789012345678901uzyIHo1qeQfuj8ky7h/8Ma04yZy78hfy',
-    'erabiltzailea'
+    'user'
   ),
   (
     7,
@@ -71,7 +71,7 @@ VALUES
     8,
     'Hugo',
     '$2y$10$123456789012345678901uzyIHo1qeQfuj8ky7h/8Ma04yZy78hfy',
-    'erabiltzailea'
+    'user'
   );
 
 --

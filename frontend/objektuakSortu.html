@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="eu">
+<html lang="eu" class="babesten">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inbentarioa - Alta</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js"></script>
     <script src="js/sortuBaliabide.js" defer></script>
   </head>
   <body>
     <header>
       <a href="inbentario.html">Inbentarioa</a>
-      <a href="erabiltzaileak.html">Erabiltzaileak</a>
+      <a data-admin href="erabiltzaileak.html">Erabiltzaileak</a>
       <a href="gelak.html">Gelak</a>
       <a href="mugimenduak.html">Mugimenduak</a>
       <a href="#" id="irten">Irten</a>
@@ -25,13 +26,14 @@
           type="text"
           name="izena"
           id="izena"
+          maxlength="150"
           placeholder="Ikasle NUC Ordenagailua"
           required
         />
       </p>
       <p>
         <label for="marka">Marka:</label><br />
-        <input type="text" name="marka" id="marka" placeholder="Intel" />
+        <input type="text" name="marka" id="marka" maxlength="100" placeholder="Intel" />
       </p>
       <p>
         <label for="modeloa">Modeloa:</label><br />
@@ -39,6 +41,7 @@
           type="text"
           name="modeloa"
           id="modeloa"
+          maxlength="100"
           placeholder="NUC 11 Pro Kit"
         />
       </p>
@@ -57,6 +60,7 @@
           name="deskribapena"
           id="deskribapena"
           rows="3"
+          maxlength="2000"
           placeholder="Intel Core i5, 16GB RAM..."
         ></textarea>
       </p>
@@ -64,6 +68,5 @@
         <a href="inbentario.html">UTZI</a><button type="submit">GORDE</button>
       </p>
     </form>
-    <script src="js/auth.js"></script>
   </body>
 </html>

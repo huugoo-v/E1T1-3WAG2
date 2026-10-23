@@ -1,0 +1,5 @@
+# Direktorioen zerrendak ez erakutsi
+Options -Indexes
+
+# Git biltegia ez da sekula zerbitzatu behar
+RedirectMatch 404 /\.git

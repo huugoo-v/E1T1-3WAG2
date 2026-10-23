@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="eu" class="babesten">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mugimenduak</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js"></script>
+    <script src="js/mugimenduak.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="inbentario.html">Inbentarioa</a>
+      <a data-admin href="erabiltzaileak.html">Erabiltzaileak</a>
+      <a href="gelak.html">Gelak</a>
+      <a href="mugimenduak.html">Mugimenduak</a>
+      <a href="#" id="irten">Irten</a>
+    </header>
+    <h1>Mugimenduak</h1>
+    <p id="mezuErrorea" role="alert"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Gela</th>
+          <th>Etiketa</th>
+          <th>Materiala</th>
+          <th>Erabiltzailea</th>
+          <th>Hasiera</th>
+          <th>Amaiera</th>
+        </tr>
+      </thead>
+      <tbody id="mugimenduTaula"></tbody>
+    </table>
+  </body>
+</html>

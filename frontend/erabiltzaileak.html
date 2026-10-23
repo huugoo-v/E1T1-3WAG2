@@ -1,31 +1,55 @@
 <!doctype html>
-<html lang="eu">
+<html lang="eu" class="babesten" data-rol="admin">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Erabiltzaileak</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js"></script>
     <script src="js/erabiltzaileak.js" defer></script>
   </head>
   <body>
     <header>
       <a href="inbentario.html">Inbentarioa</a>
-      <a href="erabiltzaileak.html">Erabiltzaileak</a>
+      <a data-admin href="erabiltzaileak.html">Erabiltzaileak</a>
       <a href="gelak.html">Gelak</a>
       <a href="mugimenduak.html">Mugimenduak</a>
       <a href="#" id="irten">Irten</a>
     </header>
     <h1>Erabiltzaileak</h1>
     <p id="mezuErrorea" role="alert"></p>
+    <form id="erabiltzaileForm" novalidate>
+      <h2 id="formIzenburua">Erabiltzaile berria</h2>
+      <input type="hidden" id="id" />
+      <p>
+        <label for="username">Erabiltzailea (*):</label><br />
+        <input type="text" id="username" maxlength="50" autocomplete="off" required />
+      </p>
+      <p>
+        <label for="pasahitza">Pasahitza <span id="pasahitzaOharra">(*)</span>:</label><br />
+        <input type="password" id="pasahitza" maxlength="72" autocomplete="new-password" />
+      </p>
+      <p>
+        <label for="rol">Rola (*):</label><br />
+        <select id="rol" required>
+          <option value="user">user</option>
+          <option value="admin">admin</option>
+        </select>
+      </p>
+      <p class="botoiak">
+        <button type="submit">GORDE</button>
+        <a href="#" id="utzi" hidden>UTZI</a>
+      </p>
+    </form>
     <table>
       <thead>
         <tr>
           <th>Erabiltzailea</th>
           <th>Rola</th>
+          <th>Ekintzak</th>
         </tr>
       </thead>
       <tbody id="erabiltzaileTaula"></tbody>
     </table>
-    <script src="js/auth.js"></script>
   </body>
 </html>
