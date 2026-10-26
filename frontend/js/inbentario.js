@@ -22,14 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
         gelaxka(b.deskribapena),
       );
       const td = document.createElement("td");
+      td.className = "taula-ekintzak";
       const aldatu = document.createElement("a");
+      aldatu.className = "botoia";
       aldatu.href = "objektuakSortu.html?id=" + encodeURIComponent(b.id);
       aldatu.textContent = "Aldatu";
       const ezabatu = document.createElement("button");
       ezabatu.type = "button";
+      ezabatu.className = "botoi-arriskua";
       ezabatu.textContent = "Ezabatu";
       ezabatu.addEventListener("click", () => baliabideaEzabatu(b.id));
-      td.append(aldatu, document.createTextNode(" | "), ezabatu);
+      td.append(aldatu, ezabatu);
       tr.append(td);
       gorputza.append(tr);
     });

@@ -1,16 +1,27 @@
 /* Base */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
   padding: 16px 24px;
-  background: #f8fafc;
-  color: #0f172a;
+  background: #f0fbfc;
+  color: #161922;
   font-family: system-ui, Arial, sans-serif;
 }
 
-a { color: #2563eb; text-decoration: none; }
-hr { display: none; }
+a {
+  color: #1a74bb;
+  text-decoration: none;
+}
+hr {
+  display: none;
+}
 
 /* Header */
 header {
@@ -19,28 +30,40 @@ header {
   gap: 8px;
   margin-bottom: 30px;
   padding: 12px 20px;
-  background: #0f172a;
+  background: #00335f;
   border-radius: 14px;
   font-size: 0; /* oculta los "|" sueltos entre enlaces */
 }
 
-header::before { /* cuadrado azul "FP", sin HTML extra */
+header::before {
+  /* cuadrado azul "FP", sin HTML extra */
   content: "FP";
   display: grid;
   place-items: center;
   width: 40px;
   height: 40px;
   margin-right: 20px;
-  background: #2563eb;
+  background: #00bec4;
   border-radius: 10px;
-  color: #fff;
+  color: #00335f;
   font-size: 15px;
   font-weight: bold;
 }
 
-header a { padding: 8px 16px; border-radius: 8px; color: #94a3b8; font-size: 15px; }
-header a:hover { background: #1e293b; color: #fff; }
-header a:last-child { margin-left: auto; border: 1px solid #334155; } /* Irten a la derecha */
+header a {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #99e5e8;
+  font-size: 15px;
+}
+header a:hover {
+  background: #0a4a7d;
+  color: #fff;
+}
+header a:last-child {
+  margin-left: auto;
+  border: 1px solid #2d6a98;
+} /* Irten a la derecha */
 
 /* Formularios */
 form {
@@ -48,24 +71,30 @@ form {
   margin: 0 auto;
   padding: 28px;
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cfeaec;
   border-radius: 14px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   margin-top: 6px;
   padding: 11px;
   font: inherit;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #b3dadd;
   border-radius: 8px;
 }
 
-input:focus, select:focus, textarea:focus { outline: 2px solid #2563eb; }
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #1a74bb;
+}
 
 button {
   padding: 11px 20px;
-  background: #2563eb;
+  background: #1a74bb;
   color: #fff;
   font-weight: bold;
   border: 0;
@@ -73,66 +102,602 @@ button {
   cursor: pointer;
 }
 
-button:hover { background: #1d4ed8; }
-#loginForm button { width: 100%; }
+button:hover {
+  background: #135a96;
+}
+#loginForm button {
+  width: 100%;
+}
 
 /* Alta: "UTZI" y "GORDE" en una fila (font-size 0 oculta el "|" que hay entre ambos) */
-#formBaliabidea p:last-child { display: flex; align-items: center; gap: 16px; font-size: 0; }
-#formBaliabidea p:last-child a, #formBaliabidea button { font-size: 15px; }
-#formBaliabidea button { flex: 1; }
+#formBaliabidea p:last-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0;
+}
+#formBaliabidea p:last-child a,
+#formBaliabidea button {
+  font-size: 15px;
+}
+#formBaliabidea button {
+  flex: 1;
+}
 
 /* Buscador: sin tarjeta, input y botón en fila */
-#bilatuForm { display: flex; align-items: center; gap: 10px; max-width: none; margin: 0 0 20px; padding: 0; background: none; border: 0; }
-#bilatuForm input { flex: 1; margin: 0; }
+#bilatuForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: none;
+  margin: 0 0 20px;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+#bilatuForm input {
+  flex: 1;
+  margin: 0;
+}
 
 /* "+ Objektu Berria Sortu" (enlace directo del body) como botón */
-body > a { display: inline-block; padding: 10px 18px; background: #10b981; color: #fff; border-radius: 8px; }
+body > a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #10b981;
+  color: #fff;
+  border-radius: 8px;
+}
 
 /* Tabla */
-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; }
-th, td { padding: 12px 16px; text-align: left; border: 0; border-bottom: 1px solid #e2e8f0; }
-th { background: #f1f5f9; color: #64748b; font-size: 13px; text-transform: uppercase; }
-tbody tr:hover { background: #f8fafc; }
-td:nth-child(1) { font-weight: 600; } /* Izena */
-td:nth-child(5) { color: #64748b; }   /* Ezaugarriak */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #cfeaec;
+}
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #cfeaec;
+}
+th {
+  background: #e1f5f6;
+  color: #535b7e;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+tbody tr:hover {
+  background: #f0fbfc;
+}
+td:nth-child(1) {
+  font-weight: 600;
+} /* Izena */
+td:nth-child(5) {
+  color: #535b7e;
+} /* Ezaugarriak */
 
 /* Errores: !important porque el HTML trae style="color: red" */
-#errorea, #mezuErrorea { padding: 10px; background: #fef2f2; color: #b91c1c !important; border-radius: 8px; text-align: center; }
-#errorea:empty, #mezuErrorea:empty { display: none; } /* oculto si no hay mensaje */
+#errorea,
+#mezuErrorea,
+#formErrorea {
+  padding: 10px;
+  background: #fef2f2;
+  color: #b91c1c !important;
+  border-radius: 8px;
+  text-align: center;
+}
+#errorea:empty,
+#mezuErrorea:empty,
+#formErrorea:empty {
+  display: none;
+} /* oculto si no hay mensaje */
 
-@media (max-width: 700px) { table { display: block; overflow-x: auto; } }
 
 /* Gelak */
-.gelak-orria { max-width: 1200px; margin: 0 auto; }
-.gelak-azalpena { color: #64748b; margin-top: -8px; margin-bottom: 24px; }
-.gelak-sarea { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.gela-txartela { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-height: 180px; padding: 22px; text-align: left; background: #fff; color: #0f172a; border: 1px solid #e2e8f0; border-radius: 14px; transition: border-color .15s, transform .15s, box-shadow .15s; }
-.gela-txartela:hover { background: #fff; border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 8px 22px #0f172a12; }
-.gela-etiketa { color: #2563eb; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
-.gela-izena { font-size: 23px; }
-.gela-taldea { color: #64748b; font-size: 14px; font-weight: 400; }
-.gela-material-kopurua { margin-top: auto; padding: 5px 10px; background: #eff6ff; color: #1d4ed8; border-radius: 999px; font-size: 12px; }
-.material-atala { margin-top: 34px; padding: 24px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
-.material-atala[hidden] { display: none; }
-.material-goiburua { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
-.material-goiburua h2 { margin-bottom: 4px; }
-.material-goiburua p { margin-top: 0; color: #64748b; }
-.botoi-bigarrena { background: #e2e8f0; color: #0f172a; }
-.botoi-bigarrena:hover { background: #cbd5e1; }
-.material-kategoria { margin-top: 22px; }
-.material-kategoria-goiburua { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.material-kategoria-goiburua h3 { margin: 0; }
-.material-kopurua { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 7px; background: #f1f5f9; color: #475569; border-radius: 999px; font-size: 12px; }
-.material-hutsik { padding: 18px; color: #64748b; background: #f8fafc; border-radius: 8px; }
-@media (max-width: 850px) { .gelak-sarea { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .gelak-sarea { grid-template-columns: 1fr; } .material-atala { padding: 14px; } .material-goiburua { align-items: flex-start; } }
+.gelak-orria {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gelak-azalpena {
+  color: #535b7e;
+  margin-top: -8px;
+  margin-bottom: 24px;
+}
+.gelak-sarea {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.gela-txartela {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 180px;
+  padding: 22px;
+  text-align: left;
+  background: #fff;
+  color: #161922;
+  border: 1px solid #cfeaec;
+  border-radius: 14px;
+  transition:
+    border-color 0.15s,
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.gela-txartela:hover {
+  background: #fff;
+  border-color: #00bec4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #00335f14;
+}
+.gela-etiketa {
+  color: #1a74bb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+}
+.gela-izena {
+  font-size: 23px;
+  font-weight: bold;
+}
+.gela-taldea {
+  color: #535b7e;
+  font-size: 14px;
+  font-weight: 400;
+}
+.gela-material-kopurua {
+  margin-top: auto;
+  padding: 5px 10px;
+  background: #dff6f7;
+  color: #00335f;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.material-atala {
+  margin-top: 34px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #cfeaec;
+  border-radius: 14px;
+}
+.material-atala[hidden] {
+  display: none;
+}
+.material-goiburua {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.material-goiburua h2 {
+  margin-bottom: 4px;
+}
+.material-goiburua p {
+  margin-top: 0;
+  color: #535b7e;
+}
+.botoi-bigarrena {
+  background: #d5eef0;
+  color: #161922;
+}
+.botoi-bigarrena:hover {
+  background: #bfe3e6;
+}
+.material-kategoria {
+  margin-top: 22px;
+}
+.material-kategoria-goiburua {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.material-kategoria-goiburua h3 {
+  margin: 0;
+}
+.material-kopurua {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  background: #e1f5f6;
+  color: #535b7e;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.material-hutsik {
+  padding: 18px;
+  color: #535b7e;
+  background: #f0fbfc;
+  border-radius: 8px;
+}
+@media (max-width: 850px) {
+  .gelak-sarea {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .gelak-sarea {
+    grid-template-columns: 1fr;
+  }
+  .material-atala {
+    padding: 14px;
+  }
+  .material-goiburua {
+    align-items: flex-start;
+  }
+}
 
 /* Orri babestuak: saioa zerbitzarian baliozkotu arte ezkutatuta (auth.js-k kentzen du) */
-html.babesten body { visibility: hidden; }
+html.babesten body {
+  visibility: hidden;
+}
 
 /* Erabiltzaileak: kudeaketa-inprimakia */
-#erabiltzaileForm { margin: 0 0 24px; }
-#erabiltzaileForm .botoiak { display: flex; align-items: center; gap: 12px; }
-.taula-ekintzak > * { margin-right: 10px; }
-.botoi-arriskua { background: #dc2626; }
-.botoi-arriskua:hover { background: #b91c1c; }
+#erabiltzaileForm {
+  margin: 0 0 24px;
+}
+#erabiltzaileForm .botoiak {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.taula-ekintzak > * {
+  margin-right: 10px;
+}
+.botoi-arriskua {
+  background: #dc2626;
+}
+.botoi-arriskua:hover {
+  background: #b91c1c;
+}
+
+/* ===== Botoiak (esteka edo botoi gisa) ===== */
+.botoia {
+  display: inline-block;
+  padding: 11px 20px;
+  background: #1a74bb;
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  line-height: normal;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botoia:hover {
+  background: #135a96;
+  color: #fff;
+}
+.botoi-berdea {
+  background: #10b981;
+}
+.botoi-berdea:hover {
+  background: #059669;
+}
+.botoi-txikia,
+.taula-ekintzak .botoia,
+.taula-ekintzak button {
+  padding: 7px 14px;
+  font-size: 14px;
+}
+.taula-ekintzak {
+  white-space: nowrap;
+}
+.taula-ekintzak > * {
+  margin-right: 8px;
+}
+.taula-ekintzak > *:last-child {
+  margin-right: 0;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+/* Ezabatu botoia: beti gorria (botoi orokorraren gainetik) */
+button.botoi-arriskua {
+  background: #dc2626;
+}
+button.botoi-arriskua:hover:not(:disabled) {
+  background: #b91c1c;
+}
+button.botoi-bigarrena {
+  background: #d5eef0;
+  color: #161922;
+}
+
+/* ===== Orri-goiburua (izenburua + ekintza-botoia) ===== */
+.orri-goiburua {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.orri-goiburua h1 {
+  margin: 0;
+}
+
+/* ===== Erabiltzaileak: elkarrizketa-koadroa (modal) ===== */
+dialog#erabiltzaileDialog {
+  width: min(460px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px #00335f40;
+}
+dialog#erabiltzaileDialog::backdrop {
+  background: #00335f99;
+}
+dialog#erabiltzaileDialog form {
+  max-width: none;
+  margin: 0;
+  border: 0;
+}
+dialog#erabiltzaileDialog h2 {
+  margin-top: 0;
+}
+#erabiltzaileForm .botoiak {
+  justify-content: flex-end;
+}
+#erabiltzaileForm .botoiak button[type="submit"] {
+  order: 2;
+}
+
+/* ===== Gela bakarraren orria ===== */
+a.gela-txartela {
+  text-decoration: none;
+}
+.gela-xehetasuna {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gela-atzera {
+  margin-bottom: 18px;
+}
+.gela-burua {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #cfeaec;
+  border-radius: 14px;
+}
+.gela-burua h1 {
+  margin: 4px 0;
+}
+.gela-burua p {
+  margin: 0;
+  color: #535b7e;
+}
+.gela-laburpena {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.gela-laburpena span {
+  padding: 5px 12px;
+  background: #dff6f7;
+  color: #00335f;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* Tableta eta txikiagoa */
+@media (max-width: 900px) {
+  body {
+    padding: 14px 16px;
+  }
+  header {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+  header::before {
+    margin-right: 8px;
+  }
+  .gela-burua {
+    padding: 18px;
+  }
+}
+
+/* Mugikorra */
+@media (max-width: 700px) {
+  body {
+    padding: 10px 12px 24px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 21px;
+  }
+
+  /* Goiburua: ezkutatu logoa, estekak lerroan zabalduta */
+  header {
+    margin-bottom: 20px;
+    padding: 8px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+  header::before {
+    display: none;
+  }
+  header a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  header a:last-child {
+    margin-left: auto;
+  }
+
+  /* Ukitzeko helburu erosoak eta iOS-ek zoom egin ez dezan */
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    font-size: 16px;
+  }
+  button,
+  .botoia {
+    min-height: 44px;
+  }
+  .taula-ekintzak .botoia,
+  .taula-ekintzak button,
+  .botoi-txikia {
+    min-height: 40px;
+  }
+
+  form {
+    padding: 20px 16px;
+  }
+
+  /* Goiburuko ekintza-botoia zabalera osoan */
+  .orri-goiburua {
+    align-items: stretch;
+  }
+  .orri-goiburua > .botoia,
+  .orri-goiburua > button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Bilatzailea: sarrera lerro osoan, botoiak azpian */
+  #bilatuForm {
+    flex-wrap: wrap;
+  }
+  #bilatuForm input {
+    flex: 1 1 100%;
+  }
+  #bilatuForm button {
+    flex: 1;
+  }
+
+  /* Alta-inprimakiaren botoiak */
+  #formBaliabidea p:last-child {
+    gap: 10px;
+  }
+  #formBaliabidea p:last-child a {
+    padding: 12px 8px;
+  }
+
+  /* Taulak -> txartelak */
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+  table {
+    background: none;
+    border: 0;
+  }
+  thead {
+    /* goiburua ezkutatu, baina pantaila-irakurgailuentzat mantendu */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  tbody tr {
+    margin-bottom: 12px;
+    padding: 6px 0;
+    background: #fff;
+    border: 1px solid #cfeaec;
+    border-radius: 12px;
+  }
+  td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 16px;
+    border: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+  td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    color: #535b7e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  td.taula-ekintzak {
+    gap: 10px;
+    padding-top: 12px;
+  }
+  td.taula-ekintzak::before {
+    display: none;
+  }
+  td.taula-ekintzak > * {
+    flex: 1;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  /* Modal: pantaila ia osoa */
+  dialog#erabiltzaileDialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+  #erabiltzaileForm .botoiak button {
+    flex: 1;
+  }
+
+  /* Gelak */
+  .gela-txartela {
+    min-height: 0;
+    padding: 18px;
+  }
+  .gela-izena {
+    font-size: 20px;
+  }
+  .material-goiburua {
+    flex-wrap: wrap;
+  }
+}
+
+/* Oso txikia */
+@media (max-width: 380px) {
+  header a {
+    padding: 9px 9px;
+    font-size: 13px;
+  }
+  td {
+    padding: 8px 12px;
+  }
+}
+
+/* ===== Paleta FP Santurtzi LH =====
+   Azul marino  #00335f  (logo, cabecera, títulos)
+   Turquesa     #00bec4  (barra de navegación de la web, detalles)
+   Azul         #1a74bb  (enlaces y botones principales)
+   Celeste      #99e5e8  (texto de la cabecera) / tintes claros de fondo
+   Gris azulado #535b7e  (texto secundario)
+   Rojo (Ezabatu) y verde (crear) se mantienen. */
+h1,
+h2,
+h3 {
+  color: #00335f;
+}
+header a:last-child:hover {
+  border-color: #00bec4;
+}

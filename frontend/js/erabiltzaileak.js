@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const pasahitzaInput = document.getElementById("pasahitza");
   const rolInput = document.getElementById("rol");
   const utzi = document.getElementById("utzi");
+  const dialog = document.getElementById("erabiltzaileDialog");
+  const formErrorea = document.getElementById("formErrorea");
   let unekoId = null;
 
   document.getElementById("irten").addEventListener("click", async (e) => {
@@ -36,7 +38,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     idInput.value = "";
     document.getElementById("formIzenburua").textContent = "Erabiltzaile berria";
     document.getElementById("pasahitzaOharra").textContent = "(*)";
-    utzi.hidden = true;
+    formErrorea.textContent = "";
+  }
+
+  function dialogoaItxi() {
+    if (dialog.open) dialog.close();
+    formaGarbitu();
+  }
+
+  function sortuIreki() {
+    formaGarbitu();
+    dialog.showModal();
+    usernameInput.focus();
+  }
+
+  function aldatuIreki(u) {
+    formaGarbitu();
+    idInput.value = u.id;
+    usernameInput.value = u.username;
+    rolInput.value = u.rol;
+    document.getElementById("formIzenburua").textContent = "Erabiltzailea aldatu";
+    document.getElementById("pasahitzaOharra").textContent = "(utzi hutsik ez aldatzeko)";
+    dialog.showModal();
+    usernameInput.focus();
   }
 
   function gelaxka(testua) {
@@ -51,20 +75,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       const tr = document.createElement("tr");
       tr.append(gelaxka(u.username), gelaxka(u.rol));
 
-      const aldatu = document.createElement("a");
-      aldatu.href = "#";
+      const aldatu = document.createElement("button");
+      aldatu.type = "button";
       aldatu.textContent = "Aldatu";
-      aldatu.addEventListener("click", (e) => {
-        e.preventDefault();
-        idInput.value = u.id;
-        usernameInput.value = u.username;
-        pasahitzaInput.value = "";
-        rolInput.value = u.rol;
-        document.getElementById("formIzenburua").textContent = "Erabiltzailea aldatu";
-        document.getElementById("pasahitzaOharra").textContent = "(utzi hutsik ez aldatzeko)";
-        utzi.hidden = false;
-        usernameInput.focus();
-      });
+      aldatu.addEventListener("click", () => aldatuIreki(u));
 
       const ezabatu = document.createElement("button");
       ezabatu.type = "button";
@@ -120,13 +134,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    mezua.textContent = "";
+    formErrorea.textContent = "";
     const sortzen = idInput.value === "";
     const username = usernameInput.value.trim();
     const pasahitza = pasahitzaInput.value;
     const errorea = baliozkotu(username, pasahitza, sortzen);
     if (errorea) {
-      mezua.textContent = errorea;
+      formErrorea.textContent = errorea;
       return;
     }
     try {
@@ -142,17 +156,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         }),
       });
       if (!data.success) throw new Error(data.message || "Errorea datuak gordetzean.");
-      formaGarbitu();
+      dialogoaItxi();
       kargatu();
     } catch (error) {
-      mezua.textContent = error.message || "Zerbitzariarekin konexio errorea.";
+      formErrorea.textContent = error.message || "Zerbitzariarekin konexio errorea.";
     }
   });
 
-  utzi.addEventListener("click", (e) => {
-    e.preventDefault();
-    formaGarbitu();
+  document.getElementById("erabiltzaileBerria").addEventListener("click", sortuIreki);
+  utzi.addEventListener("click", dialogoaItxi);
+  // Atzealdean klik eginda ere itxi
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialogoaItxi();
   });
+  // Esc teklarekin itxitakoan ere inprimakia garbitu
+  dialog.addEventListener("close", formaGarbitu);
 
   kargatu();
 });
