@@ -698,13 +698,13 @@ header a:last-child:hover {
    saguaren gurpilarekin edukiontziaren barruan gora eta behera mugitzen da.
    ===================================================== */
 .scroll-edukiontzia {
-  height: calc(100dvh - 330px);
+  height: calc(100dvh - var(--scroll-kendu, 330px));
   min-height: 320px;
   overflow-y: auto;
   overflow-x: auto;
   background: #fff;
   border: 1px solid #cfeaec;
-  border-radius: 12px;
+  border-radius: 16px;
   scrollbar-width: thin;
   scrollbar-color: #1a74bb #e1f5f6;
 }
@@ -743,5 +743,36 @@ header a:last-child:hover {
     background: transparent;
     border: 0;
     border-radius: 0;
+  }
+}
+
+/* =====================================================
+   Garbitu botoia, ekintzen zentratzea eta erabiltzaileen edukiontzia
+   ===================================================== */
+
+/* Bilatzailea: bi botoiak tamaina berekoak (Iragazi urdina, Garbitu gorria) */
+#bilatuForm button {
+  padding: 11px 20px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* Erabiltzaileen orrian bilatzailerik ez dago -> edukiontzia altuagoa */
+.scroll-edukiontzia-erabiltzaileak {
+  --scroll-kendu: 264px;
+  margin-top: 16px;
+}
+
+/* Ekintzak: botoiak zutabearen izenburuaren azpian zentratuta */
+@media (min-width: 701px) {
+  th.ekintzak-zutabea,
+  td.taula-ekintzak {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .scroll-edukiontzia-erabiltzaileak {
+    --scroll-kendu: 0px; /* mugikorrean 70dvh erabiltzen da */
   }
 }
