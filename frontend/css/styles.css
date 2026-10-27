@@ -169,9 +169,6 @@ th {
   font-size: 13px;
   text-transform: uppercase;
 }
-tbody tr:hover {
-  background: #f0fbfc;
-}
 td:nth-child(1) {
   font-weight: 600;
 } /* Izena */
@@ -686,13 +683,6 @@ a.gela-txartela {
   }
 }
 
-/* ===== Paleta FP Santurtzi LH =====
-   Azul marino  #00335f  (logo, cabecera, títulos)
-   Turquesa     #00bec4  (barra de navegación de la web, detalles)
-   Azul         #1a74bb  (enlaces y botones principales)
-   Celeste      #99e5e8  (texto de la cabecera) / tintes claros de fondo
-   Gris azulado #535b7e  (texto secundario)
-   Rojo (Ezabatu) y verde (crear) se mantienen. */
 h1,
 h2,
 h3 {
@@ -700,4 +690,58 @@ h3 {
 }
 header a:last-child:hover {
   border-color: #00bec4;
+}
+
+/* =====================================================
+   INBENTARIOA: edukiontzi finkoa scroll bertikalarekin
+   Altuera finkoa da: objektu gehiago egonda ere orria ez da luzatzen,
+   saguaren gurpilarekin edukiontziaren barruan gora eta behera mugitzen da.
+   ===================================================== */
+.scroll-edukiontzia {
+  height: calc(100dvh - 330px);
+  min-height: 320px;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #cfeaec;
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #1a74bb #e1f5f6;
+}
+.scroll-edukiontzia::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.scroll-edukiontzia::-webkit-scrollbar-track {
+  background: #e1f5f6;
+}
+.scroll-edukiontzia::-webkit-scrollbar-thumb {
+  background: #1a74bb;
+  border-radius: 999px;
+}
+.scroll-edukiontzia:focus-visible {
+  outline: 2px solid #1a74bb;
+  outline-offset: 3px;
+}
+.scroll-edukiontzia table {
+  border: 0;
+}
+/* Goiburua finko geratzen da scroll egitean */
+.scroll-edukiontzia th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 1px 0 #cfeaec;
+}
+
+/* Mugikorra: taulak txartel bihurtzen dira, edukiontzia ere scrollekoa da */
+@media (max-width: 700px) {
+  .scroll-edukiontzia {
+    height: 70dvh;
+    min-height: 360px;
+    padding: 2px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
 }
