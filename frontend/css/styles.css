@@ -192,7 +192,6 @@ td:nth-child(5) {
   display: none;
 } /* oculto si no hay mensaje */
 
-
 /* Gelak */
 .gelak-orria {
   max-width: 1200px;
@@ -235,7 +234,7 @@ td:nth-child(5) {
   color: #1a74bb;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.1em;
 }
 .gela-izena {
   font-size: 23px;
