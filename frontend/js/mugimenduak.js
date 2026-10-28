@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const gorputza = document.getElementById("mugimenduTaula");
+  const taula = document.getElementById("mugimenduTaulaOsoa");
+  const hutsik = document.getElementById("mugimenduHutsik");
   const mezua = document.getElementById("mezuErrorea");
 
   document.getElementById("irten").addEventListener("click", async (e) => {
@@ -20,15 +22,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!data.success)
       throw new Error(data.message || "Ezin izan dira mugimenduak kargatu.");
 
+    // Irakurtzeko soilik: ez dago ezabatu edo gehitzeko botoirik
     data.mugimenduak.forEach((m) => {
       const tr = document.createElement("tr");
-      [m.gela, m.etiketa, m.materiala, m.erabiltzailea, m.hasieraData, m.amaieraData || "—"].forEach((balioa) => {
+      [
+        [m.materiala, m.marka, m.modeloa].filter(Boolean).join(" "),
+        m.etiketa,
+        m.nondik,
+        m.nora,
+        m.data,
+        m.erabiltzailea,
+      ].forEach((balioa) => {
         const td = document.createElement("td");
         td.textContent = balioa ?? "";
         tr.append(td);
       });
       gorputza.append(tr);
     });
+    taula.hidden = !data.mugimenduak.length;
+    hutsik.hidden = data.mugimenduak.length > 0;
   } catch (error) {
     mezua.textContent = error.message || "Zerbitzariarekin konexio errorea.";
   }

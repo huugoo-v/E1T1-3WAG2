@@ -23,13 +23,46 @@
             <a class="botoia botoi-txikia" href="gelak.html">&larr; Gela guztiak</a>
         </div>
         <p id="mezuErrorea" role="alert"></p>
+        <p id="mezuOna" role="status"></p>
         <section id="gelaBurua" class="gela-burua" hidden>
             <span class="gela-etiketa">GELA</span>
             <h1 id="gelaIzena"></h1>
             <p id="gelaTaldea"></p>
             <div id="gelaLaburpena" class="gela-laburpena"></div>
         </section>
-        <div id="materialEdukiak"></div>
+
+        <div id="materialEdukiak" class="scroll-edukiontzia scroll-edukiontzia-gela" tabindex="0" role="region" aria-label="Gelako materiala" hidden>
+            <table id="materialTaula">
+                <thead>
+                    <tr>
+                        <th>Materiala</th>
+                        <th>Etiketa</th>
+                        <th>Marka / modeloa</th>
+                        <th>Kategoria</th>
+                        <th>Egoera</th>
+                        <th class="ekintzak-zutabea">Ekintzak</th>
+                    </tr>
+                </thead>
+                <tbody id="materialGorputza"></tbody>
+            </table>
+            <p id="materialHutsik" class="material-hutsik" hidden>Oraindik ez dago gela honetan esleitutako materialik.</p>
+        </div>
+
+        <dialog id="mugituDialog" class="dialog-modala" aria-labelledby="mugituIzenburua">
+            <form id="mugituForm" novalidate>
+                <h2 id="mugituIzenburua">Gailua mugitu</h2>
+                <p id="mugituInfo" class="mugitu-info"></p>
+                <p id="formErrorea" role="alert"></p>
+                <p>
+                    <label for="helburuGela">Helburuko gela (*):</label><br>
+                    <select id="helburuGela" required></select>
+                </p>
+                <p class="botoiak">
+                    <button type="button" id="mugituUtzi" class="botoi-bigarrena">UTZI</button>
+                    <button type="submit" id="mugituGorde">MUGITU</button>
+                </p>
+            </form>
+        </dialog>
     </main>
 </body>
 </html>

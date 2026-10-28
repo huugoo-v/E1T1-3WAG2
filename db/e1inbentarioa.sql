@@ -44,6 +44,33 @@ CREATE TABLE
     `marka` varchar(100) DEFAULT NULL,
     `modeloa` varchar(100) DEFAULT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+--
+-- Dumping data for table `baliabideak`
+--
+INSERT INTO
+  `baliabideak` (
+    `id`,
+    `kategoriaId`,
+    `izena`,
+    `deskribapena`,
+    `marka`,
+    `modeloa`
+  )
+VALUES
+  (8, 1, 'ikasle', 'adawdwd', 'awdaw', 'awdwad'),
+  (9, 2, 'Hugo', 'Holi', 'Mason', 'pene'),
+  (
+    12,
+    1,
+    'dawdad',
+    'adawdwad',
+    'adawda',
+    'dawdwadawd'
+  ),
+  (13, 1, 'awddwa', 'awdawd', 'adawd', 'awdawda'),
+  (14, 1, 'ad', 'awdawd', 'adawd', 'adawd');
+
 -- --------------------------------------------------------
 --
 -- Table structure for table `erabiltzaileak`

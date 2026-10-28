@@ -19,18 +19,28 @@
     </header>
     <h1>Mugimenduak</h1>
     <p id="mezuErrorea" role="alert"></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Gela</th>
-          <th>Etiketa</th>
-          <th>Materiala</th>
-          <th>Erabiltzailea</th>
-          <th>Hasiera</th>
-          <th>Amaiera</th>
-        </tr>
-      </thead>
-      <tbody id="mugimenduTaula"></tbody>
-    </table>
+    <div
+      class="scroll-edukiontzia scroll-edukiontzia-mugimenduak"
+      tabindex="0"
+      role="region"
+      aria-label="Gelen arteko mugimenduak"
+    >
+      <table id="mugimenduTaulaOsoa">
+        <thead>
+          <tr>
+            <th>Materiala</th>
+            <th>Etiketa</th>
+            <th>Nondik</th>
+            <th>Nora</th>
+            <th>Data</th>
+            <th>Erabiltzailea</th>
+          </tr>
+        </thead>
+        <tbody id="mugimenduTaula"></tbody>
+      </table>
+      <p id="mugimenduHutsik" class="material-hutsik" hidden>
+        Oraindik ez da gelen arteko mugimendurik egin.
+      </p>
+    </div>
   </body>
 </html>

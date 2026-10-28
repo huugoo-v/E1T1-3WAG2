@@ -192,6 +192,7 @@ td:nth-child(5) {
   display: none;
 } /* oculto si no hay mensaje */
 
+
 /* Gelak */
 .gelak-orria {
   max-width: 1200px;
@@ -234,7 +235,7 @@ td:nth-child(5) {
   color: #1a74bb;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.10em;
 }
 .gela-izena {
   font-size: 23px;
@@ -773,5 +774,93 @@ header a:last-child:hover {
 @media (max-width: 700px) {
   .scroll-edukiontzia-erabiltzaileak {
     --scroll-kendu: 0px; /* mugikorrean 70dvh erabiltzen da */
+  }
+}
+
+/* =====================================================
+   GELA (mugitu gailuak) eta MUGIMENDUAK (irakurtzeko soilik)
+   ===================================================== */
+.scroll-edukiontzia-gela {
+  --scroll-kendu: 440px;
+  margin-top: 16px;
+}
+.scroll-edukiontzia-mugimenduak {
+  --scroll-kendu: 258px;
+  margin-top: 16px;
+}
+.scroll-edukiontzia .material-hutsik {
+  margin: 0;
+  border-radius: 0;
+  text-align: center;
+}
+
+/* Ekintza egin dela adierazten duen mezua */
+#mezuOna {
+  margin: 0 0 14px;
+  padding: 10px;
+  background: #d6f5e6;
+  color: #0b6b43;
+  border-radius: 8px;
+  text-align: center;
+}
+#mezuOna:empty {
+  display: none;
+}
+
+/* Egoera-etiketak */
+.egoera-pila {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.egoera-ona {
+  background: #d6f5e6;
+  color: #0b6b43;
+}
+.egoera-bestea {
+  background: #fdebc8;
+  color: #8a4b00;
+}
+
+/* Gailua mugitzeko leihoa */
+dialog#mugituDialog {
+  width: min(460px, calc(100vw - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px #00335f40;
+}
+dialog#mugituDialog::backdrop {
+  background: #00335f99;
+}
+dialog#mugituDialog form {
+  max-width: none;
+  margin: 0;
+  border: 0;
+}
+dialog#mugituDialog h2 {
+  margin-top: 0;
+}
+.mugitu-info {
+  margin: 0 0 14px;
+  color: #535b7e;
+  font-weight: 600;
+}
+#mugituForm .botoiak {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  dialog#mugituDialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+  #mugituForm .botoiak button {
+    flex: 1;
   }
 }
