@@ -9,6 +9,12 @@
 
   const joan = (url) => window.location.replace(url);
 
+  // Orriaren beste scriptek (adib. gelak.js) rola jakin behar dutenean: await window.saioaPrest
+  let saioaEbatzi;
+  window.saioaPrest = new Promise((ebatzi) => {
+    saioaEbatzi = ebatzi;
+  });
+
   const domPrest = new Promise((ebatzi) => {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", ebatzi, { once: true });
@@ -38,6 +44,7 @@
       if (data.rol !== "admin") {
         document.querySelectorAll("[data-admin]").forEach((el) => el.remove());
       }
+      saioaEbatzi(window.saioa);
       html.classList.remove("babesten");
     } catch (error) {
       joan(LOGIN);

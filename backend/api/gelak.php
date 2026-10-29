@@ -7,23 +7,6 @@ saioaEskatu();
 try {
     $pdo = (new DB())->getKonexioa();
 
-    // Gelarik ez badago, hasierako sei gelak sortu.
-    $kopurua = (int) $pdo->query('SELECT COUNT(*) FROM gelak')->fetchColumn();
-    if ($kopurua === 0) {
-        $stmt = $pdo->prepare('INSERT INTO gelak (izena, taldea) VALUES (?, ?)');
-        foreach ([
-            ['Gela 1', 'DAW'],
-            ['Gela 2', 'DAW'],
-            ['Gela 3', 'Administrazioa'],
-            ['Gela 4', 'Sareak'],
-            ['Gela 5', 'Irakasleak'],
-            ['Mintegia', 'Informatika mintegia'],
-            ['Biltegia', 'Biltegia'],
-        ] as [$izena, $taldea]) {
-            $stmt->execute([$izena, $taldea]);
-        }
-    }
-
     $sql = 'SELECT g.id AS gelaId, g.izena AS gela, g.taldea,
                    ga.id AS gailuId, ga.etiketa, ga.egoera,
                    b.izena AS materiala, b.marka, b.modeloa, b.deskribapena,

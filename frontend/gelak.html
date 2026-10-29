@@ -19,12 +19,46 @@
     </header>
 
     <main class="gelak-orria">
-        <h1>Gelak</h1>
-        <p class="gelak-azalpena">Sakatu gela baten gainean bertan gordeta dagoen materiala ikusteko.</p>
+        <div class="orri-goiburua">
+            <h1>Gelak</h1>
+            <button type="button" id="gelaBerria" class="botoia botoi-berdea" data-admin>+ Gela berria</button>
+        </div>
         <p id="mezuErrorea" role="alert"></p>
-        <section id="gelakSarea" class="gelak-sarea" aria-label="Gelak">
-            <p>Gelak kargatzen...</p>
-        </section>
+        <p id="mezuOna" role="status"></p>
+
+        <div class="scroll-edukiontzia scroll-edukiontzia-gelak" tabindex="0" role="region" aria-label="Gelak">
+            <table id="gelakTaula" hidden>
+                <thead>
+                    <tr>
+                        <th>Gela</th>
+                        <th>Taldea</th>
+                        <th>Materiala</th>
+                        <th class="ekintzak-zutabea">Ekintzak</th>
+                    </tr>
+                </thead>
+                <tbody id="gelakGorputza"></tbody>
+            </table>
+            <p id="gelakHutsik" class="material-hutsik">Gelak kargatzen...</p>
+        </div>
+
+        <dialog id="gelaDialog" aria-labelledby="gelaIzenburua">
+            <form id="gelaForm" novalidate>
+                <h2 id="gelaIzenburua">Gela berria</h2>
+                <p id="formErrorea" role="alert"></p>
+                <p>
+                    <label for="gelaIzena">Izena (*):</label><br>
+                    <input type="text" id="gelaIzena" maxlength="100" autocomplete="off" required>
+                </p>
+                <p>
+                    <label for="gelaTaldea">Taldea:</label><br>
+                    <input type="text" id="gelaTaldea" maxlength="100" autocomplete="off">
+                </p>
+                <p class="botoiak">
+                    <button type="button" id="gelaUtzi" class="botoi-bigarrena">UTZI</button>
+                    <button type="submit" id="gelaGorde">GORDE</button>
+                </p>
+            </form>
+        </dialog>
     </main>
 </body>
 </html>

@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mugituInfo = document.getElementById('mugituInfo');
     const helburua = document.getElementById('helburuGela');
     const gordeBotoia = document.getElementById('mugituGorde');
+    const bilatuForm = document.getElementById('bilatuForm');
+    const bilatuInput = document.getElementById('bilatu');
+    const emaitzaKopurua = document.getElementById('emaitzaKopurua');
 
     const KATEGORIA_ORDENA = ['Mahaigaineko ekipoa', 'Portatila', 'Periferikoak', 'Beste batzuk'];
     const gelaId = Number(new URLSearchParams(window.location.search).get('id'));
@@ -49,6 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
             (a.etiketa || '').localeCompare(b.etiketa || '', 'eu', {numeric: true}));
     }
 
+    // Maiuskulak eta azentuak kontuan hartu gabe bilatzen da; hitz guztiak agertu behar dira
+    const normalizatu = t => String(t ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    function iragazi(materialak) {
+        const hitzak = normalizatu(bilatuInput.value).split(/\s+/).filter(Boolean);
+        if (!hitzak.length) return materialak;
+        return materialak.filter(m => {
+            const testua = normalizatu([m.izena, m.etiketa, m.marka, m.modeloa, m.kategoria, m.egoera, m.deskribapena].join(' '));
+            return hitzak.every(h => testua.includes(h));
+        });
+    }
+
     function errenkada(m) {
         const tr = document.createElement('tr');
         const markaModeloa = [m.marka, m.modeloa].filter(Boolean).join(' / ');
@@ -84,10 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.entries(kategoriak).forEach(([k, kopurua]) => laburpena.append(sortu('span', `${k}: ${kopurua}`)));
         burua.hidden = false;
 
-        gorputza.replaceChildren(...ordenatu(gela.materialak).map(errenkada));
-        taula.hidden = !gela.materialak.length;
-        hutsik.hidden = gela.materialak.length > 0;
+        bilatuForm.hidden = false;
+        zerrendaMarraztu();
         edukiontzia.hidden = false;
+    }
+
+    // Taula bilaketaren arabera marrazten da (bilaketa hutsik badago, guztia)
+    function zerrendaMarraztu() {
+        const guztira = gela.materialak.length;
+        const emaitza = ordenatu(iragazi(gela.materialak));
+        gorputza.replaceChildren(...emaitza.map(errenkada));
+        taula.hidden = !emaitza.length;
+        hutsik.hidden = emaitza.length > 0;
+        hutsik.textContent = guztira ? 'Ez da materialik aurkitu bilaketa horrekin.' : 'Oraindik ez dago gela honetan esleitutako materialik.';
+        emaitzaKopurua.textContent = bilatuInput.value.trim() ? `${emaitza.length} / ${guztira} material` : '';
+        edukiontzia.scrollTop = 0;
     }
 
     async function kargatu() {
@@ -159,6 +185,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('mugituUtzi').addEventListener('click', itxi);
     dialog.addEventListener('click', e => {
         if (e.target === dialog) itxi();   // atzealdean klik eginda ere itxi
+    });
+
+    // Bilatzailea: idaztean iragazten da; Iragazi eta Garbitu botoiek inventarioko berberak dira
+    bilatuInput.addEventListener('input', () => gela && zerrendaMarraztu());
+    bilatuForm.addEventListener('submit', e => {
+        e.preventDefault();
+        if (gela) zerrendaMarraztu();
+    });
+    document.getElementById('garbitu').addEventListener('click', () => {
+        bilatuInput.value = '';
+        if (gela) zerrendaMarraztu();
+        bilatuInput.focus();
     });
 
     document.getElementById('irten').addEventListener('click', async e => {

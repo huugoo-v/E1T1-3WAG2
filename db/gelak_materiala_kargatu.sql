@@ -44,8 +44,9 @@ SET @hasiera_data := CURDATE();
 SELECT @erabiltzaile_id AS erabiltzaile_id_aukeratua;  -- no debe salir NULL
 
 -- ---------------------------------------------------------------------
--- 2) SALAS (las mismas que crea automaticamente la pagina "Gelak")
---    Solo se crean las que falten, buscando por nombre.
+-- 2) SALAS: las 7 salas del proyecto (Gela 1-5, Mintegia y Biltegia).
+--    Solo se crean las que falten, buscando por nombre. La pagina "Gelak" ya no
+--    crea salas por su cuenta: se crean y se borran desde ella con los botones.
 -- ---------------------------------------------------------------------
 INSERT INTO gelak (izena, taldea)
 SELECT s.izena, s.taldea
