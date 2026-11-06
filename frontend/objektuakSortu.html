@@ -21,19 +21,31 @@
     <form id="formBaliabidea">
       <input type="hidden" name="id" id="id" />
       <p>
+        <label for="etiketa">Etiketa / inbentario zenbakia (*):</label><br />
+        <input
+          type="text"
+          name="etiketa"
+          id="etiketa"
+          maxlength="50"
+          placeholder="G1-PCHP-15"
+          autocomplete="off"
+          required
+        />
+      </p>
+      <p>
         <label for="izena">Ekipamenduaren Izena (*):</label><br />
         <input
           type="text"
           name="izena"
           id="izena"
           maxlength="150"
-          placeholder="Ikasle NUC Ordenagailua"
+          placeholder="Ordenagailua"
           required
         />
       </p>
       <p>
         <label for="marka">Marka:</label><br />
-        <input type="text" name="marka" id="marka" maxlength="100" placeholder="Intel" />
+        <input type="text" name="marka" id="marka" maxlength="100" placeholder="HP" />
       </p>
       <p>
         <label for="modeloa">Modeloa:</label><br />
@@ -42,7 +54,7 @@
           name="modeloa"
           id="modeloa"
           maxlength="100"
-          placeholder="NUC 11 Pro Kit"
+          placeholder="ProDesk 400 G7"
         />
       </p>
       <p>
@@ -61,8 +73,37 @@
           id="deskribapena"
           rows="3"
           maxlength="2000"
-          placeholder="Intel Core i5, 16GB RAM..."
+          placeholder="Core i5, 16 GB RAM, 512 GB SSD..."
         ></textarea>
+      </p>
+      <p>
+        <label for="gela_id">Gela (*):</label><br />
+        <select name="gela_id" id="gela_id" required>
+          <option value="">Aukeratu gela...</option>
+        </select>
+        <small id="gelaOharra" class="form-oharra" hidden>
+          Gela aldatzeko, erabili "Mugitu" botoia gelaren orrian.
+        </small>
+      </p>
+      <p>
+        <label for="egoera">Egoera:</label><br />
+        <input
+          type="text"
+          name="egoera"
+          id="egoera"
+          maxlength="50"
+          list="egoeraZerrenda"
+          value="Operatiboa"
+        />
+        <datalist id="egoeraZerrenda">
+          <option value="Operatiboa"></option>
+          <option value="Konponketan"></option>
+          <option value="Matxuratuta"></option>
+        </datalist>
+      </p>
+      <p>
+        <label for="erosketa_data">Erosketa-data:</label><br />
+        <input type="date" name="erosketa_data" id="erosketa_data" />
       </p>
       <p>
         <a href="inbentario.html">UTZI</a><button type="submit">GORDE</button>

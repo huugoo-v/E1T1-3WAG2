@@ -952,3 +952,27 @@ dialog#gelaDialog h2 {
 .gelak-orria {
   max-width: none;
 }
+
+/* =====================================================
+   INBENTARIOA (gailuak) eta gailuaren alta/edizio inprimakia
+   ===================================================== */
+/* Kontagailu-lerroa gehitu da -> edukiontzia pixka bat baxuagoa, orria ez luzatzeko */
+.scroll-edukiontzia-inbentarioa {
+  --scroll-kendu: 356px;
+}
+.scroll-edukiontzia-inbentarioa .material-hutsik {
+  padding: 32px 16px;
+}
+.form-oharra[hidden] {
+  display: none;
+}
+.form-oharra {
+  display: block;
+  margin-top: 6px;
+  color: #535b7e;
+  font-size: 13px;
+}
+select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

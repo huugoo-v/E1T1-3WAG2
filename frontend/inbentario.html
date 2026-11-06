@@ -33,25 +33,29 @@
       <button type="submit">Iragazi</button>
       <button type="button" id="garbitu" class="botoi-arriskua">Garbitu</button>
     </form>
+    <p id="kopurua" class="emaitza-kopurua" aria-live="polite"></p>
     <div
-      class="scroll-edukiontzia"
+      class="scroll-edukiontzia scroll-edukiontzia-inbentarioa"
       tabindex="0"
       role="region"
-      aria-label="Inbentarioko objektuak"
+      aria-label="Inbentarioko gailuak"
     >
-    <table>
+    <table id="taula" hidden>
       <thead>
         <tr>
+          <th>Etiketa</th>
           <th>Izena</th>
           <th>Marka</th>
           <th>Modeloa</th>
           <th>Kategoria</th>
-          <th>Ezaugarriak</th>
+          <th>Gela</th>
+          <th>Egoera</th>
           <th class="ekintzak-zutabea">Ekintzak</th>
         </tr>
       </thead>
       <tbody id="taulaGorputza"></tbody>
     </table>
+    <p id="hutsik" class="material-hutsik" hidden>Ez da gailurik aurkitu.</p>
     </div>
   </body>
 </html>
